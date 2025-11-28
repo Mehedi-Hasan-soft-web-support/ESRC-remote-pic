@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESRC Presentation Remote - Next Generation Control System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-logo {
+            font-size: 6em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-title {
+            font-size: 4.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-tagline {
+            font-size: 1.3em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            50% { text-shadow: 0 0 40px rgba(255,215,0,0.8); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            33% { transform: translateY(-100px) translateX(50px); }
+            66% { transform: translateY(-50px) translateX(-50px); }
+        }
+
+        /* Features Section */
+        .features-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #000 0%, #1a1a2e 100%);
+            padding: 100px 50px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5em;
+            margin-bottom: 80px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.5s ease;
+            animation: popIn 0.8s ease-out backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        .feature-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .feature-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Specs Section */
+        .specs-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            padding: 100px 50px;
+            position: relative;
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .spec-item {
+            background: rgba(255,255,255,0.05);
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            animation: slideInFromRight 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(20px);
+            border-left-width: 10px;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .spec-label {
+            font-size: 1.3em;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .spec-value {
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+
+        /* Hardware Section */
+        .hardware-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 100px 50px;
+        }
+
+        /* Product Showcase Section */
+        .product-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #374b81 0%, #3ce9e1 100%);
+            padding: 100px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            text-align: center;
+            animation: fadeInScale 1.5s ease-out;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            animation: productFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes productFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .image-caption {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffd700;
+            opacity: 0.9;
+        }
+
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hardware-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeInScale 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .hardware-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(102, 126, 234, 0.8);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hardware-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .hardware-title {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .hardware-desc {
+            opacity: 0.9;
+        }
+
+        /* Survey Section */
+        .survey-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #16213e 0%, #0f0c29 100%);
+            padding: 100px 50px;
+        }
+
+        .survey-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            animation: zoomIn 1s ease-out backwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-number {
+            font-size: 5em;
+            font-weight: 900;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 50px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            animation: fadeInScale 1s ease-out backwards;
+        }
+
+        .comparison-number {
+            font-size: 5em;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .comparison-text h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .comparison-text p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #667eea 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            z-index: 10;
+        }
+
+        .cta-title {
+            font-size: 4em;
+            margin-bottom: 30px;
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .cta-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .cta-stat {
+            text-align: center;
+        }
+
+        .cta-stat-number {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: #ffd700;
+        }
+
+        .cta-stat-label {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(20px); }
+        }
+
+        .scroll-indicator::before {
+            content: '⬇';
+            font-size: 3em;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 15px;
+            z-index: 10000;
+            color: white;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.2em; }
+            .section-title { font-size: 2.5em; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .cta-title { font-size: 2.5em; }
+            .cta-stats { flex-direction: column; gap: 30px; }
+        }
+
+        /* Animation delays */
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .spec-item:nth-child(1) { animation-delay: 0.1s; }
+        .spec-item:nth-child(2) { animation-delay: 0.2s; }
+        .spec-item:nth-child(3) { animation-delay: 0.3s; }
+        .spec-item:nth-child(4) { animation-delay: 0.4s; }
+        .spec-item:nth-child(5) { animation-delay: 0.5s; }
+        .spec-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .hardware-card:nth-child(1) { animation-delay: 0.1s; }
+        .hardware-card:nth-child(2) { animation-delay: 0.2s; }
+        .hardware-card:nth-child(3) { animation-delay: 0.3s; }
+        .hardware-card:nth-child(4) { animation-delay: 0.4s; }
+        .hardware-card:nth-child(5) { animation-delay: 0.5s; }
+        .hardware-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .stat-card:nth-child(1) { animation-delay: 0.2s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.6s; }
+        .stat-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .comparison-item:nth-child(1) { animation-delay: 0.2s; }
+        .comparison-item:nth-child(2) { animation-delay: 0.4s; }
+        .comparison-item:nth-child(3) { animation-delay: 0.6s; }
+        .comparison-item:nth-child(4) { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-logo"></div>
+            <h1 class="hero-title">ESRC Presentation Remote</h1>
+            <p class="hero-subtitle">Gesture-Controlled ESP32-Based BLE System</p>
+            <p class="hero-tagline">with OLED Feedback & 100+ User Validation</p>
+        </div>
+        <div class="scroll-indicator"></div>
+        <!-- Floating particles -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 80%; left: 20%; animation-delay: 3s;"></div>
+        <div class="particle" style="top: 30%; left: 90%; animation-delay: 1.5s;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">✨ Revolutionary Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🤚</span>
+                <h3 class="feature-title">Gesture-Based Control</h3>
+                <p class="feature-description">Shake-to-start and shake-to-exit presentation control. Natural motion-based interaction using MPU6050 accelerometer/gyroscope sensor with 94.2% accuracy.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">📱</span>
+                <h3 class="feature-title">0.96" OLED Display</h3>
+                <p class="feature-description">Real-time visual feedback with on-screen animations. Display live status, connection info, battery level, and slide preview instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🔴</span>
+                <h3 class="feature-title">Integrated Laser Pointer</h3>
+                <p class="feature-description">Built-in red laser pointer for precise highlighting during presentations. Perfect for emphasizing key points to your audience.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🔋</span>
+                <h3 class="feature-title">Smart Power Management</h3>
+                <p class="feature-description">Multi-tier sleep modes (deep sleep 10μA, light sleep, display timeout). Rechargeable Li-ion battery delivers 8-10 hours of continuous use.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">📡</span>
+                <h3 class="feature-title">Bluetooth Low Energy</h3>
+                <p class="feature-description">BLE connectivity with 50-meter indoor operating range. Low-latency communication with 180-220ms response time. Cross-platform compatible.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3 class="feature-title">Lightning Fast Performance</h3>
+                <p class="feature-description">ESP32-powered system with instant response. Connection establishment in just 1.2-1.8 seconds. Ultra-reliable with 96% stability rating.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section class="specs-section">
+        <h2 class="section-title">📊 Technical Specifications</h2>
+        <div class="specs-container">
+            <div class="spec-item">
+                <div class="spec-label">🎯 Gesture Recognition Accuracy</div>
+                <div class="spec-value">94.2% Precision Rate</div>
+            </div>
+
+            <div class="spec-item">
+                <div class="spec-label">⚡ Average Response Latency</div>
+                <div class="spec-value">180-220 milliseconds</div>
+            </div>
+
+            <div class="spec-item">
+                <div class="spec-label">📡 Operating Range (Indoor)</div>
+                <div class="spec-value">50 meters / 164 feet</div>
+            </div>
+
+            <div class="spec-item">
+                <div class="spec-label">🔋 Battery Life (Continuous)</div>
+                <div class="spec-value">8-10 hours per charge</div>
+            </div>
+
+            <div class="spec-item">
+                <div class="spec-label">⏱️ Connection Time</div>
+                <div class="spec-value">1.2-1.8 seconds establishment</div>
+            </div>
+
+            <div class="spec-item">
+                <div class="spec-label">💰 Cost Efficiency</div>
+                <div class="spec-value">~$10 USD (Affordable & Sustainable)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="product-section">
+        <h2 class="section-title">📸 Meet the ESRC Remote</h2>
+        <div class="product-container">
+            <div class="product-image-wrapper">
+                <img src="https://raw.githubusercontent.com/Mehedi-Hasan-soft-web-support/ESRC-remote-pic/main/2.png" 
+                     alt="ESRC Presentation Remote" 
+                     class="product-image">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Components Section -->
+    <section class="hardware-section">
+        <h2 class="section-title">🔧 Hardware Components</h2>
+        <div class="hardware-grid">
+            <div class="hardware-card">
+                <div class="hardware-icon">🧠</div>
+                <h3 class="hardware-title">ESP32 MCU</h3>
+                <p class="hardware-desc">Central controller with built-in BLE for wireless communication</p>
+            </div>
+
+            <div class="hardware-card">
+                <div class="hardware-icon">📐</div>
+                <h3 class="hardware-title">MPU6050 Sensor</h3>
+                <p class="hardware-desc">6-axis accelerometer + gyroscope for gesture detection</p>
+            </div>
+
+            <div class="hardware-card">
+                <div class="hardware-icon">🖥️</div>
+                <h3 class="hardware-title">OLED Display</h3>
+                <p class="hardware-desc">0.96" screen for real-time status and animations</p>
+            </div>
+
+            <div class="hardware-card">
+                <div class="hardware-icon">🔘</div>
+                <h3 class="hardware-title">Push Buttons</h3>
+                <p class="hardware-desc">Manual navigation controls for slide advancement</p>
+            </div>
+
+            <div class="hardware-card">
+                <div class="hardware-icon">🔌</div>
+                <h3 class="hardware-title">TP4056 Module</h3>
+                <p class="hardware-desc">Safe Li-ion battery charging via micro-USB</p>
+            </div>
+
+            <div class="hardware-card">
+                <div class="hardware-icon">🔋</div>
+                <h3 class="hardware-title">Li-ion Battery</h3>
+                <p class="hardware-desc">3.7V, 1000-1200 mAh rechargeable power source</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Results Section -->
+    <section class="survey-section">
+        <h2 class="section-title">📈 User Validation Results</h2>
+        <p style="text-align: center; font-size: 1.3em; margin-bottom: 60px; opacity: 0.9;">
+            Based on feedback from 100+ participants across academic and professional settings
+        </p>
+        <div class="survey-stats">
+            <div class="stat-card">
+                <div class="stat-number">93%</div>
+                <div class="stat-label">Overall Satisfaction</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">97%</div>
+                <div class="stat-label">Shake Feature Approval</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Prefer Over Traditional</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">96%</div>
+                <div class="stat-label">Reliability Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <h2 class="section-title">🏆 Why ESRC Remote Stands Out</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <div class="comparison-number">01</div>
+                <div class="comparison-text">
+                    <h3>Gesture + Button Hybrid</h3>
+                    <p>Unlike traditional remotes with button-only input, ESRC offers natural gesture control combined with manual buttons for maximum flexibility.</p>
+                </div>
+            </div>
+
+            <div class="comparison-item">
+                <div class="comparison-number">02</div>
+                <div class="comparison-text">
+                    <h3>Visual OLED Feedback</h3>
+                    <p>While competitors use LED or no feedback, ESRC provides rich visual status updates and animations on a crisp OLED display.</p>
+                </div>
+            </div>
+
+            <div class="comparison-item">
+                <div class="comparison-number">03</div>
+                <div class="comparison-text">
+                    <h3>BLE Power Efficiency</h3>
+                    <p>Advanced Bluetooth Low Energy instead of power-hungry 2.4GHz RF. Deep sleep mode extends battery life significantly.</p>
+                </div>
+            </div>
+
+            <div class="comparison-item">
+                <div class="comparison-number">04</div>
+                <div class="comparison-text">
+                    <h3>100+ User Validated</h3>
+                    <p>Tested across 45+ hours in real presentations. Most commercial remotes lack comprehensive user validation studies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">🚀 The Future of Presentation Control</h2>
+            <p class="cta-subtitle">Tested, Validated, and Proven in Real-World Scenarios</p>
+            
+            <div class="cta-stats">
+                <div class="cta-stat">
+                    <div class="cta-stat-number">100+</div>
+                    <div class="cta-stat-label">Users Tested</div>
+                </div>
+                <div class="cta-stat">
+                    <div class="cta-stat-number">45+</div>
+                    <div class="cta-stat-label">Hours Validated</div>
+                </div>
+                <div class="cta-stat">
+                    <div class="cta-stat-number">$10</div>
+                    <div class="cta-stat-label">Cost Effective</div>
+                </div>
+            </div>
+        </div>
+        <!-- Floating particles -->
+        <div class="particle" style="top: 15%; left: 15%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 70%; left: 85%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 45%; left: 70%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 85%; left: 25%; animation-delay: 3s;"></div>
+    </section>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div style="margin-bottom: 10px;">
+            <span id="statusIndicator">▶️ Auto-Playing</span>
+        </div>
+        <button class="control-btn" onclick="toggleAutoScroll()">
+            <span id="toggleBtn">⏸️ Pause</span>
+        </button>
+    </div>
+
+    <script>
+        // AUTO-SCROLL CONFIGURATION
+        let autoScrollEnabled = true;
+        let currentSection = 0;
+        const sections = document.querySelectorAll('section');
+        const sectionDurations = [5000, 8000, 7000, 8000, 6000, 6000, 7000, 5000];
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                startAutoScroll();
+            }, 2000);
+        });
+
+        function startAutoScroll() {
+            if (!autoScrollEnabled) return;
+            
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                sections[currentSection].scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
