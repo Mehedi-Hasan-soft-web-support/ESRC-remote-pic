@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -251,6 +252,198 @@
             opacity: 0.9;
         }
 
+        /* Algorithm Section */
+        .algorithm-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #000 0%, #1a1a2e 100%);
+            padding: 100px 50px;
+        }
+
+        .algorithm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 40px;
+        }
+
+        .algorithm-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            animation: popIn 0.8s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .algorithm-card:hover {
+            border-color: rgba(102, 126, 234, 0.8);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .algorithm-title {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .formula {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 15px;
+            font-size: 1.5em;
+            text-align: center;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            color: #4facfe;
+            border: 2px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .formula-list {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .formula-list div {
+            font-size: 1.3em;
+            padding: 10px 0;
+            color: #4facfe;
+            font-family: 'Courier New', monospace;
+        }
+
+        .algorithm-desc {
+            font-size: 1.1em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Testing Section */
+        .testing-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 100px 50px;
+        }
+
+        .testing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testing-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeInScale 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .testing-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .testing-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .testing-title {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .testing-desc {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Market Comparison Section */
+        .market-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            padding: 100px 50px;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .market-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            animation: fadeInScale 1s ease-out backwards;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .market-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .highlight-card {
+            border: 3px solid #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+        }
+
+        .best-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            animation: pulse 2s infinite;
+        }
+
+        .market-brand {
+            font-size: 1.5em;
+            color: #4facfe;
+            margin-bottom: 15px;
+        }
+
+        .market-price {
+            font-size: 2em;
+            color: #ffd700;
+            font-weight: 900;
+            margin: 20px 0;
+        }
+
+        .market-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .market-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.9;
+        }
+
+        .market-features li:last-child {
+            border-bottom: none;
+        }
+
         /* Hardware Section */
         .hardware-section {
             min-height: 100vh;
@@ -258,10 +451,229 @@
             padding: 100px 50px;
         }
 
+        /* Team Section */
+        .team-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #16213e 0%, #0f0c29 100%);
+            padding: 100px 50px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeInScale 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .team-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .team-name {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .team-dept {
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Metrics Detail Section */
+        .metrics-detail-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 50px;
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .metric-detail-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: popIn 0.8s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .metric-detail-card:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .metric-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .metric-detail-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .metric-big {
+            font-size: 3em;
+            font-weight: 900;
+            color: #ffd700;
+            margin: 20px 0;
+        }
+
+        .metric-detail-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Future Section */
+        .future-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0f0c29 0%, #302b63 100%);
+            padding: 100px 50px;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .future-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            animation: fadeInScale 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .future-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .future-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .future-title {
+            font-size: 1.6em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .future-desc {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Publication Section */
+        .publication-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #302b63 0%, #24243e 100%);
+            padding: 100px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .publication-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .publication-card {
+            background: rgba(255,255,255,0.05);
+            border: 3px solid #ffd700;
+            border-radius: 25px;
+            padding: 60px;
+            text-align: center;
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .publication-icon {
+            font-size: 5em;
+            margin-bottom: 30px;
+        }
+
+        .publication-title {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+
+        .publication-detail {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .publication-detail strong {
+            color: #4facfe;
+        }
+
+        .publication-badge {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .publication-badge span {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
         /* Product Showcase Section */
         .product-section {
             min-height: 100vh;
-            background: linear-gradient(180deg, #374b81 0%, #3ce9e1 100%);
+            background: linear-gradient(180deg, #16213e 0%, #0f0c29 100%);
             padding: 100px 50px;
             display: flex;
             flex-direction: column;
@@ -288,7 +700,7 @@
         .product-image {
             max-width: 100%;
             height: auto;
-            max-height: 200vh;
+            max-height: 70vh;
             object-fit: contain;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
@@ -580,6 +992,36 @@
         .hardware-card:nth-child(5) { animation-delay: 0.5s; }
         .hardware-card:nth-child(6) { animation-delay: 0.6s; }
 
+        .testing-card:nth-child(1) { animation-delay: 0.1s; }
+        .testing-card:nth-child(2) { animation-delay: 0.2s; }
+        .testing-card:nth-child(3) { animation-delay: 0.3s; }
+        .testing-card:nth-child(4) { animation-delay: 0.4s; }
+        .testing-card:nth-child(5) { animation-delay: 0.5s; }
+        .testing-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .market-card:nth-child(1) { animation-delay: 0.1s; }
+        .market-card:nth-child(2) { animation-delay: 0.2s; }
+        .market-card:nth-child(3) { animation-delay: 0.3s; }
+        .market-card:nth-child(4) { animation-delay: 0.4s; }
+        .market-card:nth-child(5) { animation-delay: 0.5s; }
+        .market-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .algorithm-card:nth-child(1) { animation-delay: 0.2s; }
+        .algorithm-card:nth-child(2) { animation-delay: 0.4s; }
+        .algorithm-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .team-card:nth-child(1) { animation-delay: 0.1s; }
+        .team-card:nth-child(2) { animation-delay: 0.2s; }
+        .team-card:nth-child(3) { animation-delay: 0.3s; }
+        .team-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .future-card:nth-child(1) { animation-delay: 0.1s; }
+        .future-card:nth-child(2) { animation-delay: 0.2s; }
+        .future-card:nth-child(3) { animation-delay: 0.3s; }
+        .future-card:nth-child(4) { animation-delay: 0.4s; }
+        .future-card:nth-child(5) { animation-delay: 0.5s; }
+        .future-card:nth-child(6) { animation-delay: 0.6s; }
+
         .stat-card:nth-child(1) { animation-delay: 0.2s; }
         .stat-card:nth-child(2) { animation-delay: 0.4s; }
         .stat-card:nth-child(3) { animation-delay: 0.6s; }
@@ -590,12 +1032,50 @@
         .comparison-item:nth-child(3) { animation-delay: 0.6s; }
         .comparison-item:nth-child(4) { animation-delay: 0.8s; }
     </style>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <div class="hero-logo"></div>
+            <div class="hero-logo">🎯</div>
             <h1 class="hero-title">ESRC Presentation Remote</h1>
             <p class="hero-subtitle">Gesture-Controlled ESP32-Based BLE System</p>
             <p class="hero-tagline">with OLED Feedback & 100+ User Validation</p>
@@ -695,7 +1175,162 @@
                 <img src="https://raw.githubusercontent.com/Mehedi-Hasan-soft-web-support/ESRC-remote-pic/main/2.png" 
                      alt="ESRC Presentation Remote" 
                      class="product-image">
-                
+                <div class="image-caption">Compact, Ergonomic Design - 3213×7559 pixels</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Team Section -->
+    <section class="team-section">
+        <h2 class="section-title">👥 Research Team</h2>
+        <p style="text-align: center; font-size: 1.3em; margin-bottom: 60px; opacity: 0.9;">
+            Daffodil International University, Dhaka, Bangladesh
+        </p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-icon">👨‍💻</div>
+                <h3 class="team-name">Md. Mehedi Hasan</h3>
+                <p class="team-role">Lead Researcher</p>
+                <p class="team-dept">Department of CSE</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">👩‍💻</div>
+                <h3 class="team-name">Maria Rashid</h3>
+                <p class="team-role">Co-Researcher</p>
+                <p class="team-dept">Department of CSE</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">👨‍💻</div>
+                <h3 class="team-name">Fizar Ahmed</h3>
+                <p class="team-role">Co-Researcher</p>
+                <p class="team-dept">Department of CSE</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">👨‍💻</div>
+                <h3 class="team-name">Md. Hasan Imam Bijoy</h3>
+                <p class="team-role">Co-Researcher</p>
+                <p class="team-dept">Department of CIS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics Detail Section -->
+    <section class="metrics-detail-section">
+        <h2 class="section-title">📊 Detailed Performance Metrics</h2>
+        <div class="metrics-container">
+            <div class="metric-row">
+                <div class="metric-detail-card">
+                    <div class="metric-icon">🎯</div>
+                    <h3>Gesture Recognition</h3>
+                    <div class="metric-big">94.2%</div>
+                    <p>Accuracy across 100 gesture attempts from 100+ participants</p>
+                </div>
+                <div class="metric-detail-card">
+                    <div class="metric-icon">⚡</div>
+                    <h3>Response Latency</h3>
+                    <div class="metric-big">180-220ms</div>
+                    <p>Measured using 240fps high-speed camera</p>
+                </div>
+            </div>
+
+            <div class="metric-row">
+                <div class="metric-detail-card">
+                    <div class="metric-icon">❌</div>
+                    <h3>False Positive Rate</h3>
+                    <div class="metric-big">2.8%</div>
+                    <p>Unintended shake detection during normal use</p>
+                </div>
+                <div class="metric-detail-card">
+                    <div class="metric-icon">⚠️</div>
+                    <h3>False Negative Rate</h3>
+                    <div class="metric-big">3.0%</div>
+                    <p>Missed shake gestures during testing</p>
+                </div>
+            </div>
+
+            <div class="metric-row">
+                <div class="metric-detail-card">
+                    <div class="metric-icon">🔌</div>
+                    <h3>Deep Sleep Current</h3>
+                    <div class="metric-big">10 μA</div>
+                    <p>Ultra-low power consumption in standby mode</p>
+                </div>
+                <div class="metric-detail-card">
+                    <div class="metric-icon">📡</div>
+                    <h3>Connection Time</h3>
+                    <div class="metric-big">1.2-1.8s</div>
+                    <p>BLE pairing and establishment time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Work Section -->
+    <section class="future-section">
+        <h2 class="section-title">🔮 Future Development Roadmap</h2>
+        <div class="future-grid">
+            <div class="future-card">
+                <div class="future-icon">🧠</div>
+                <h3 class="future-title">Adaptive Learning</h3>
+                <p class="future-desc">Machine learning algorithms to adapt to individual user gesture patterns for improved accuracy and personalization.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="future-icon">🎤</div>
+                <h3 class="future-title">Voice Commands</h3>
+                <p class="future-desc">Integration of voice control for hands-free presentation navigation and enhanced accessibility features.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="future-icon">📱</div>
+                <h3 class="future-title">Mobile App Integration</h3>
+                <p class="future-desc">Companion smartphone application for advanced configuration, slide preview, and remote monitoring.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="future-icon">☀️</div>
+                <h3 class="future-title">Energy Harvesting</h3>
+                <p class="future-desc">Solar and kinetic energy harvesting technology to extend battery life and enable self-sustaining operation.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="future-icon">🔒</div>
+                <h3 class="future-title">Encrypted Communication</h3>
+                <p class="future-desc">Enhanced security protocols with end-to-end encryption for sensitive presentation environments.</p>
+            </div>
+
+            <div class="future-card">
+                <div class="future-icon">🌐</div>
+                <h3 class="future-title">Cloud Sync</h3>
+                <p class="future-desc">Cloud-based settings synchronization and usage analytics for enterprise deployment scenarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publication Section -->
+    <section class="publication-section">
+        <h2 class="section-title">📚 Academic Publication</h2>
+        <div class="publication-container">
+            <div class="publication-card">
+                <div class="publication-icon">📖</div>
+                <h3 class="publication-title">Taylor & Francis Book Chapter</h3>
+                <p class="publication-detail">
+                    <strong>Title:</strong> Design, Algorithm, and Implementation of ESRC Remote: A Gesture-Controlled ESP32-Based BLE Presentation Remote with OLED Feedback and 100+ User Validation
+                </p>
+                <p class="publication-detail">
+                    <strong>Publisher:</strong> Taylor and Francis Group
+                </p>
+                <p class="publication-detail">
+                    <strong>Type:</strong> Peer-Reviewed Book Chapter
+                </p>
+                <div class="publication-badge">
+                    <span>✅ Academically Validated</span>
+                    <span>✅ Peer-Reviewed</span>
+                    <span>✅ Published Research</span>
+                </div>
             </div>
         </div>
     </section>
@@ -847,24 +1482,127 @@
         </button>
     </div>
 
-    <script>
-        // AUTO-SCROLL CONFIGURATION
+   
+      <script>
+        // AUTO-SCROLL CONFIGURATION - Video-like experience
         let autoScrollEnabled = true;
         let currentSection = 0;
         const sections = document.querySelectorAll('section');
-        const sectionDurations = [5000, 8000, 7000, 8000, 6000, 6000, 7000, 5000];
+        const sectionDurations = [5000, 8000, 6000, 6000, 5000]; // Duration for each section in ms
         
+        // Start auto-scroll after page load
         window.addEventListener('load', () => {
             setTimeout(() => {
                 startAutoScroll();
-            }, 2000);
+            }, 2000); // Wait 2 seconds before starting
         });
 
         function startAutoScroll() {
             if (!autoScrollEnabled) return;
             
+            // Scroll to next section
             if (currentSection < sections.length - 1) {
                 currentSection++;
                 sections[currentSection].scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
+                });
+                
+                // Schedule next scroll
+                setTimeout(() => {
+                    startAutoScroll();
+                }, sectionDurations[currentSection] || 5000);
+            } else {
+                // Loop back to start
+                setTimeout(() => {
+                    currentSection = 0;
+                    sections[0].scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    setTimeout(startAutoScroll, 5000);
+                }, 5000);
+            }
+        }
+
+        // Pause auto-scroll on user interaction
+        let interactionTimeout;
+        ['wheel', 'touchstart', 'keydown'].forEach(event => {
+            window.addEventListener(event, () => {
+                autoScrollEnabled = false;
+                clearTimeout(interactionTimeout);
+                
+                // Resume after 10 seconds of no interaction
+                interactionTimeout = setTimeout(() => {
+                    autoScrollEnabled = true;
+                    // Find closest section and continue from there
+                    const scrollPosition = window.scrollY;
+                    sections.forEach((section, index) => {
+                        if (section.offsetTop <= scrollPosition + 100) {
+                            currentSection = index;
+                        }
+                    });
+                    setTimeout(startAutoScroll, 2000);
+                }, 10000);
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.feature-card, .spec-item, .benefit-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                const speed = 0.5 + (index * 0.1);
+                particle.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add control panel overlay
+        const controlPanel = document.createElement('div');
+        controlPanel.innerHTML = `
+            <div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 15px; z-index: 10000; color: white; font-size: 14px;">
+                <div style="margin-bottom: 10px;">
+                    <span id="statusIndicator">▶️ Auto-Playing</span>
+                </div>
+                <button onclick="toggleAutoScroll()" style="padding: 10px 20px; background: linear-gradient(45deg, #667eea, #764ba2); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                    <span id="toggleBtn">⏸️ Pause</span>
+                </button>
+            </div>
+        `;
+        document.body.appendChild(controlPanel);
+
+        window.toggleAutoScroll = function() {
+            autoScrollEnabled = !autoScrollEnabled;
+            const statusIndicator = document.getElementById('statusIndicator');
+            const toggleBtn = document.getElementById('toggleBtn');
+            
+            if (autoScrollEnabled) {
+                statusIndicator.textContent = '▶️ Auto-Playing';
+                toggleBtn.textContent = '⏸️ Pause';
+                setTimeout(startAutoScroll, 1000);
+            } else {
+                statusIndicator.textContent = '⏸️ Paused';
+                toggleBtn.textContent = '▶️ Play';
+            }
+        };
+    </script>
